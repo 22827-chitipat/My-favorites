@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Paradise - โลกของคนรักแมว</title>
+    <style>
+        /* การตั้งค่าสไตล์เบื้องต้น */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Sukhumvit Set', 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        body {
+            background-color: #fdfbf7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 1. ส่วนหัวเว็บไซต์ (Header) */
+        header {
+            background-color: #ff9a9e;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffeccc;
+        }
+
+        /* Container จัดระเบียบเนื้อหา */
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        /* 2. ส่วนเนื้อหา (Content) */
+        .content-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .content-section h2 {
+            color: #ff758c;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 1.5rem 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        .text-content p {
+            margin-bottom: 1rem;
+            text-indent: 2em;
+        }
+
+        .bullet-list {
+            margin: 1.5rem 0 1.5rem 2rem;
+            background-color: #fff0f3;
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+        }
+
+        .bullet-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* 3. ระบบแสดงความคิดเห็น (Comment Section) */
+        .comment-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .comment-form input, 
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .comment-form button {
+            background-color: #ff758c;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .comment-form button:hover {
+            background-color: #ff4968;
+        }
+
+        .comments-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .comment-item {
+            background: #f9f9f9;
+            padding: 12px 16px;
+            border-left: 4px solid #ff758c;
+            border-radius: 4px;
+        }
+
+        .comment-item .author {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .comment-item .text {
+            color: #555;
+        }
+
+        /* 4. ส่วนท้ายเว็บไซต์ (Footer) */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 4px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. ส่วนหัวเว็บไซต์ (Header) -->
+    <header>
+        <h1>🐾 Cat Paradise</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">หน้าแรก</a></li>
+                <li><a href="#about">เกี่ยวกับแมว</a></li>
+                <li><a href="#comments">ความคิดเห็น</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- 2. ส่วนเนื้อหา (Content) -->
+        <section id="about" class="content-section">
+            <h2>ทำความรู้จักกับ "น้องแมว" เพื่อนสี่ขาแสนน่ารัก</h2>
+            
+            <!-- รูปภาพอย่างน้อย 3 รูป -->
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=500" alt="แมวน่ารัก 1">
+                <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=500" alt="แมวน่ารัก 2">
+                <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=500" alt="แมวน่ารัก 3">
+            </div>
+
+            <!-- รายละเอียดไม่น้อยกว่า 3 ย่อหน้า -->
+            <div class="text-content">
+                <p>
+                    แมว (Cat) เป็นสัตว์เลี้ยงลูกด้วยนมที่ได้รับความนิยมอย่างมากทั่วโลก ด้วยลักษณะที่น่ารัก นุ่มฟู และพฤติกรรมที่มีเอกลักษณ์เฉพาะตัว แมวเริ่มเข้ามามีความสัมพันธ์กับมนุษย์มานานหลายพันปี ตั้งแต่สมัยอียิปต์โบราณ โดยในอดีตพวกมันทำหน้าที่ช่วยจับหนูและสัตว์ขาปล้องที่เข้ามาทำลายพืชผลทางการเกษตร
+                </p>
+                <p>
+                    ในปัจจุบัน แมวไม่ได้เป็นเพียงแค่สัตว์ที่เลี้ยงไว้จับหนูอีกต่อไป แต่ได้กลายมาเป็นสมาชิกสำคัญในครอบครัว หรือที่หลายคนเรียกว่า "ลูกรัก" การเลี้ยงแมวช่วยลดความเครียด สร้างความผ่อนคลาย และสร้างรอยยิ้มให้กับผู้เลี้ยงได้อย่างดีเยี่ยม เพราะการได้มองดูพฤติกรรมแปลกๆ หรือฟังเสียงร้อง "เหมียวๆ" ก็สามารถทำให้วันแย่ๆ สดใสขึ้นมาได้
+                </p>
+                <p>
+                    อย่างไรก็ตาม การเลี้ยงแมวต้องอาศัยความรับผิดชอบและความเอาใจใส่เป็นอย่างมาก ผู้เลี้ยงควรศึกษาธรรมชาติของแมว เตรียมความพร้อมทั้งเรื่องอาหาร สถานที่เลี้ยงที่ปลอดภัย การดูแลสุขภาพ ตลอดจนการพาไปฉีดวัคซีนตามนัด เพื่อให้แมวมีสุขภาพที่ดีและอยู่กับเราไปได้นานๆ
+                </p>
+            </div>
+
+            <!-- รายการแบบ Bullet อย่างน้อย 1 รายการ -->
+            <h3>ข้อดีของการเลี้ยงแมว</h3>
+            <ul class="bullet-list">
+                <li>ช่วยลดความเครียดและความวิตกกังวลของผู้เลี้ยง</li>
+                <li>ใช้พื้นที่ในการเลี้ยงน้อย เหมาะกับการอยู่อาศัยในคอนโดหรือบ้าน</li>
+                <li>ดูแลรักษาง่าย ไม่ต้องนำไปเดินขับถ่ายนอกบ้านเหมือนสุนัข</li>
+                <li>ฝึกฝนเรื่องการขับถ่ายในกระบะทรายได้ง่ายตามสัญชาตญาณ</li>
+            </ul>
+        </section>
+
+        <!-- 3. ระบบแสดงความคิดเห็น (Comment Section) -->
+        <section id="comments" class="comment-section">
+            <h2>แสดงความคิดเห็น</h2>
+            
+            <form class="comment-form" id="commentForm">
+                <input type="text" id="nameInput" placeholder="ชื่อของคุณ" required>
+                <textarea id="commentInput" rows="4" placeholder="เขียนความคิดเห็นของคุณที่นี่..." required></textarea>
+                <button type="submit">ส่งความคิดเห็น</button>
+            </form>
+
+            <div class="comments-list" id="commentsList">
+                <!-- ความคิดเห็นจะมาปรากฏตรงนี้ -->
+            </div>
+        </section>
+    </div>
+
+    <!-- 4. ส่วนท้ายเว็บไซต์ (Footer) -->
+    <footer>
+        <p><strong>ผู้จัดทำ:</strong> นายสมชาย ใจดี</p>
+        <p><strong>ชั้นเรียน:</strong> มัธยมศึกษาปีที่ 5/1</p>
+        <p><strong>ปีการศึกษา:</strong> 2569</p>
+    </footer>
+
+    <!-- JavaScript สำหรับระบบแสดงความคิดเห็น -->
+    <script>
+        const commentForm = document.getElementById('commentForm');
+        const nameInput = document.getElementById('nameInput');
+        const commentInput = document.getElementById('commentInput');
+        const commentsList = document.getElementById('commentsList');
+
+        commentForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // ป้องกันหน้าเว็บรีเฟรชเมื่อกดส่ง
+
+            const nameText = nameInput.value.trim();
+            const commentText = commentInput.value.trim();
+
+            if (nameText !== "" && commentText !== "") {
+                // สร้าง Element สำหรับความคิดเห็นใหม่
+                const newComment = document.createElement('div');
+                newComment.className = 'comment-item';
+                
+                newComment.innerHTML = `
+                    <div class="author">👤 ${escapeHtml(nameText)}</div>
+                    <div class="text">${escapeHtml(commentText)}</div>
+                `;
+
+                // แทรกความคิดเห็นใหม่ไว้บนสุด (prepend)
+                commentsList.prepend(newComment);
+
+                // ล้างข้อมูลในช่องกรอก
+                nameInput.value = '';
+                commentInput.value = '';
+            }
+        });
+
+        // ฟังก์ชันช่วยป้องกันความปลอดภัย (XSS Attack)
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+    </script>
+</body>
+</html>
